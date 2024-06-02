@@ -18,9 +18,9 @@ const typeDefs = `
 
   type Review {
     _id: ID
-    reviewBody: String
-    username: String
-    createdAt: Date
+    reviewBody: String!
+    username: String!
+    createdAt: Date!
   }
 
   type Auth {

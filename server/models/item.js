@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
-    itemname: {
+    itemName: {
         type: String,
         required: true,
     },
@@ -21,26 +21,19 @@ const itemSchema = new Schema({
         type: String,
         required: true,
     },
-    reviews: [reviewSchema],
+    reviews: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review',
+      },
+    ],
+    // reviews: [reviewSchema],
 });
 
-const reviewSchema = new Schema({
-    reviewBody: {
-      type: String,
-      required: true,
-      maxlength: 280,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-  });
-
 const Item = model('Item', itemSchema);
+// const Review = model('Review', reviewSchema);
+
+// module.exports = {Item, Review};
 
 module.exports = Item;
 
