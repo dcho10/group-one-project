@@ -1,32 +1,40 @@
-const { User, Item } = require('../models');
+const { User, Item, Review } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+      users: async () => {
+        return User.find()
+        .populate('reviews');
+      },
+      user: async (parent, { userName }) => {
+        return User.findOne({ userName })
+        .populate('reviews');
+      },
       items: async () => {
-        return Item.find().populate('reviews');
+        return Item.find()
       },
-      item: async (parent, { itemName }) => {
-        return Item.findOne({ itemName }).populate('reviews');
+      item: async (parent, { itemId }) => {
+        return Item.findOne({ _id: itemId });
       },
-      reviews: async (parent, { itemName }) => {
-        const params = itemName ? { itemName } : {};
-        return review.find(params).sort({ createdAt: -1 });
+      reviews: async (parent, { userName }) => {
+        const params = userName ? { userName } : {};
+        return Review.find(params).sort({ createdAt: -1 });
       },
       review: async (parent, { reviewId }) => {
-        return review.findOne({ _id: reviewId });
+        return Review.findOne({ _id: reviewId });
       },
-      item: async (parent, args, context) => {
-        if (context.item) {
-          return Item.findOne({ _id: context.item._id }).populate('reviews');
+      me: async (parent, args, context) => {
+        if (context.user) {
+          return User.findOne({ _id: context.user._id }).populate('reviews');
         }
         throw AuthenticationError;
       },
     },
 
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-          const user = await User.create({ username, email, password });
+        addUser: async (parent, { username, email, password, isSeller }) => {
+          const user = await User.create({ username, email, password, isSeller });
           const token = signToken(user);
           return { token, user };
         },
@@ -54,16 +62,15 @@ const resolvers = {
         // if (!item) {
         //     throw AuthenticationError;
         //   },
-        addReview: async (parent, { reviewBody, username, createdAt }, context) => {
-            if (context.item) {
+        addReview: async (parent, { reviewBody, reviewerName, createdAt }, context) => {
+            if (context.user) {
               const review = await Review.create({
                 reviewBody,
-                username,
-                createdAt,
+                reviewerName: context.user.username,
               });
       
-              await Item.findOneAndUpdate(
-                { _id: context.item._id },
+              await User.findOneAndUpdate(
+                { _id: context.user._id },
                 { $addToSet: { reviews: review._id } }
               );
       
@@ -73,14 +80,14 @@ const resolvers = {
             ('You need to be logged in!');
           },
         removeReview: async (parent, { reviewId }, context) => {
-          if (context.item) {
+          if (context.user) {
             const review = await review.findOneAndDelete({
               _id: reviewId,
-            //   reviewAuthor: context.user.username,
+              reviewerName: context.user.username,
             });
     
-            await Item.findOneAndUpdate(
-              { _id: context.item._id },
+            await User.findOneAndUpdate(
+              { _id: context.user._id },
               { $pull: { reviews: review._id } }
             );
     

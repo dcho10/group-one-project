@@ -19,6 +19,16 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  isSeller: {
+    type: Boolean,
+    required: true,
+  },
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Review',
+    },
+  ],
 });
 
 userSchema.pre('save', async function (next) {

@@ -1,26 +1,27 @@
 const typeDefs = `
   type User {
     _id: ID
-    username: String
+    userName: String
     email: String
     password: String
+    isSeller: Boolean
+    reviews: [Review]!
   }
 
   type Item {
     _id: ID
     itemName: String
-    price: Number
+    price: Int
     inStock: Boolean
-    inventoryCount: Number
+    inventoryCount: Int
     description: String
-    reviews: [Review]!
   }
 
   type Review {
     _id: ID
-    reviewBody: String!
-    username: String!
-    createdAt: Date!
+    reviewBody: String
+    reviewerName: String
+    createdAt: String
   }
 
   type Auth {
@@ -30,23 +31,24 @@ const typeDefs = `
 
   type Query {
     users: [User]
-    user(username: String!): User
+    user(userName: String!): User
+    reviews(userName: String): [Review]
+    review(reviewId: ID!): Review
     me: User
   }
 
   type Query {
     items: [Item]
-    item(itemName: String!): Item
-    review(reviewBody: String!, username: String!, createdAt: Date!)
+    item(itemId: ID!): Item
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    addItem(itemName: String!, price: Number!, inStock: Boolean!, inventoryCount: Number!, description: String!): Item
+    addUser(username: String, email: String, password: String, isSeller: Boolean): Auth
+    login(email: String, password: String): Auth
+    addItem(itemName: String, price: Int, inStock: Boolean, inventoryCount: Int, description: String): Item
     removeItem(itemName: ID!): Item
-    addReviews(reviewBody: String!, username: String!, createdAt: Date!): Review
-    removeReviews(reviewId: ID!): Review
+    addReview(reviewBody: String, reviewerName: String, createdAt: String): Review
+    removeReview(reviewId: ID!): Review
   }
 `;
 

@@ -2,11 +2,13 @@
     {
       "username": "Brian Kernighan",
       "email": "bkernighan@techfriends.dev",
-      "password": "password01"
+      "password": "password01",
+      "isSeller": true
     },
     {
       "username": "Max Kanat-Alexander",
       "email": "mkanatalexander@techfriends.dev",
-      "password": "password02"
+      "password": "password02",
+      "isSeller": false
     }
 ]

@@ -6,7 +6,7 @@ const reviewSchema = new Schema({
     required: true,
     maxlength: 280,
   },
-  username: {
+  reviewerName: {
     type: String,
     required: true,
   },
@@ -16,6 +16,6 @@ const reviewSchema = new Schema({
   },
 });
 
-const Review = model('Review', reviewSchema);
+const Review = model('review', reviewSchema);
 
 module.exports = Review;
