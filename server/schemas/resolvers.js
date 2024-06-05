@@ -33,8 +33,8 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, { username, email, password, isSeller }) => {
-          const user = await User.create({ username, email, password, isSeller });
+        addUser: async (parent, { userName, email, password, isSeller }) => {
+          const user = await User.create({ userName, email, password, isSeller });
           const token = signToken(user);
           return { token, user };
         },
@@ -55,18 +55,41 @@ const resolvers = {
     
           return { token, user };
         },
-        addItem: async (parent, { itemName, price, inStock, inventoryCount, description }, context) => {
-            const item = await Item.create({ itemName, price, inStock, inventoryCount, description });
-          return { item };
+        // addItem: async (parent, { itemName }, context) => {
+        //   if (context.user) {
+        //     const item = await Item.create({ 
+        //       itemName,
+        //       sellerName: context.user.userName,
+        //      });
+          
+        //   await User.findOneAndUpdate(
+        //     {_id: context.user._id},
+        //     { $addToSet: { items: item._id } },
+        //     { new: true }
+        //   );
+
+        //   return item;
+        // }
+        // throw AuthenticationError;
+        // ('You need to be logged in!');
+        // },
+        addItem: async (parent, { userId, item }) => {
+          return User.findOneAndUpdate(
+            { _id: userId },
+            {
+              $addToSet: { items: item },
+            },
+            {
+              new: true,
+              runValidators: true,
+            },
+          )
         },
-        // if (!item) {
-        //     throw AuthenticationError;
-        //   },
-        addReview: async (parent, { reviewBody, reviewerName, createdAt }, context) => {
+        addReview: async (parent, { reviewBody }, context) => {
             if (context.user) {
               const review = await Review.create({
                 reviewBody,
-                reviewerName: context.user.username,
+                reviewerName: context.user.userName,
               });
       
               await User.findOneAndUpdate(
@@ -83,7 +106,7 @@ const resolvers = {
           if (context.user) {
             const review = await review.findOneAndDelete({
               _id: reviewId,
-              reviewerName: context.user.username,
+              reviewerName: context.user.userName,
             });
     
             await User.findOneAndUpdate(

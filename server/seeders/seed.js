@@ -15,7 +15,7 @@ db.once('open', async () => {
 
     await User.create(userSeeds);
     
-    await Item.create(itemSeeds);
+    // await Item.create(itemSeeds);
 
     // await Review.create(reviewSeeds);
 
@@ -32,16 +32,20 @@ db.once('open', async () => {
         }
       );
     }
-    // for (let i = 0; i < thoughtsList.length; i++) {
-    //   const userId = usersList.filter(
-    //     (user) => user.username === thoughtsList[i].username
-    //   );
-    //   await User.findOneAndUpdate(
-    //     { _id: userId[0]._id },
-    //     { $push: { thoughts: thoughtsList[i]._id } },
-    //     { new: true },
-    //     );
-    // };
+
+    for (let i = 0; i < itemSeeds.length; i++) {
+      const { _id , sellerName } = await Item.create(itemSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { 
+          userName: sellerName
+         },
+        {
+          $addToSet: {
+            items: _id,
+          },
+        }
+      );
+    }
 
   } catch (err) {
     console.error(err);

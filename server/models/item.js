@@ -21,6 +21,10 @@ const itemSchema = new Schema({
         type: String,
         required: true,
     },
+    sellerName: {
+        type: String,
+        required: true,
+    }
     // reviews: [reviewSchema],
 });
 
