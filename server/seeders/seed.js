@@ -23,7 +23,7 @@ db.once('open', async () => {
       const { _id , reviewerName } = await Review.create(reviewSeeds[i]);
       const user = await User.findOneAndUpdate(
         { 
-          username: reviewerName
+          userName: reviewerName
          },
         {
           $addToSet: {
