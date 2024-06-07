@@ -3,12 +3,31 @@
       "userName": "Brian Kernighan",
       "email": "bkernighan@techfriends.dev",
       "password": "password01",
-      "isSeller": true
+      "isSeller": true,
+      "reviews": 
+      {
+        "reviewBody": "Hard to find this item, but happy to find it.",
+        "reviewerName": "Max Kanat-Alexander"
+      },
+      "items":
+      {
+        "itemName": "Roy Halladay 2003 Blue Jays Jersey",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Vintage Roy Halladay jersey from the 2003 season.",
+        "sellerName": "Brian Kernighan"
+      }
     },
     {
       "userName": "Max Kanat-Alexander",
       "email": "mkanatalexander@techfriends.dev",
       "password": "password02",
-      "isSeller": false
+      "isSeller": false,
+      "reviews":
+      {
+        "reviewBody": "Hard to find this item, but happy to find it.",
+        "reviewerName": "Max Kanat-Alexander"
+      }
     }
 ]

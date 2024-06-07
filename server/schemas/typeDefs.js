@@ -5,8 +5,17 @@ const typeDefs = `
     email: String
     password: String
     isSeller: Boolean
-    items: [Item]!
-    reviews: [Review]!
+    items: [Item]
+    reviews: [Review]
+  }
+
+  input ItemInput {
+    itemName: String
+    price: Int
+    inStock: Boolean
+    inventoryCount: Int
+    description: String
+    sellerName: String
   }
 
   type Item {
@@ -26,24 +35,19 @@ const typeDefs = `
     createdAt: String
   }
 
+  input ReviewInput {
+    reviewBody: String
+    reviewerName: String
+  }
+
   type Auth {
     token: ID!
     user: User
   }
 
   type Query {
-    users: [User]
+    users: [User]!
     user(userId: ID!): User
-    items(userName: String): [Item]
-    item(itemId: ID!): Item
-    reviews(userName: String): [Review]
-    review(reviewId: ID!): Review
-    me: User
-  }
-
-  type Query {
-    items: [Item]
-    item(itemId: ID!): Item
   }
 
   type Mutation {
@@ -51,13 +55,13 @@ const typeDefs = `
 
     login(email: String, password: String): Auth
 
-    addItem(userId: ID!, itemName: String, price: Int, inStock: Boolean, inventoryCount: Int, description: String, sellerName: String): Item
+    addItem(userId: ID!, item: ItemInput): User
 
-    removeItem(itemId: ID!): Item
+    removeItem(userId: ID!, itemId: ID!): User
 
-    addReview(reviewBody: String, reviewerName: String, createdAt: String): Review
+    addReview(userId: ID!, review: ReviewInput): User
     
-    removeReview(reviewId: ID!): Review
+    removeReview(userId: ID!, reviewId: ID!): User
   }
 `;
 
