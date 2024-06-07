@@ -1,34 +1,13 @@
-const { User, Item, Review } = require('../models');
+const { User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
       users: async () => {
-        return User.find()
-        .populate('reviews');
+        return User.find();
       },
       user: async (parent, { userId }) => {
-        return User.findOne({ _id: userId })
-        .populate('reviews');
-      },
-      items: async () => {
-        return Item.find()
-      },
-      item: async (parent, { itemId }) => {
-        return Item.findOne({ _id: itemId });
-      },
-      reviews: async (parent, { userName }) => {
-        const params = userName ? { userName } : {};
-        return Review.find(params).sort({ createdAt: -1 });
-      },
-      review: async (parent, { reviewId }) => {
-        return Review.findOne({ _id: reviewId });
-      },
-      me: async (parent, args, context) => {
-        if (context.user) {
-          return User.findOne({ _id: context.user._id }).populate('reviews');
-        }
-        throw AuthenticationError;
+        return User.findOne({ _id: userId });
       },
     },
 
@@ -85,38 +64,32 @@ const resolvers = {
             },
           )
         },
-        addReview: async (parent, { reviewBody }, context) => {
-            if (context.user) {
-              const review = await Review.create({
-                reviewBody,
-                reviewerName: context.user.userName,
-              });
-      
-              await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $addToSet: { reviews: review._id } }
-              );
-      
-              return review;
-            }
-            throw AuthenticationError;
-            ('You need to be logged in!');
-          },
-        removeReview: async (parent, { reviewId }, context) => {
-          if (context.user) {
-            const review = await review.findOneAndDelete({
-              _id: reviewId,
-              reviewerName: context.user.userName,
-            });
-    
-            await User.findOneAndUpdate(
-              { _id: context.user._id },
-              { $pull: { reviews: review._id } }
-            );
-    
-            return review;
-          }
-          throw AuthenticationError;
+        addReview: async (parent, { userId, review }) => {
+          return User.findOneAndUpdate(
+            { _id: userId },
+            {
+              $addToSet: { reviews: review },
+            },
+            {
+              new: true,
+              runValidators: true,
+            },
+          )
+        },
+        removeItem: async (parent, { userId, itemId }) => {
+          return User.findOneAndUpdate(
+            { _id: userId },
+            { $pull: { items: { _id: itemId }} },
+            // { $pull: { items: {item: {_id: itemId }}} },
+            { new: true }
+          );
+        },
+        removeReview: async (parent, { userId, reviewId }) => {
+          return User.findOneAndUpdate(
+            { _id: userId },
+            { $pull: { reviews: { _id: reviewId }} },
+            { new: true }
+          );
         },
       },
     };

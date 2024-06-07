@@ -25,14 +25,47 @@ const userSchema = new Schema({
   },
   reviews: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Review',
+      reviewBody: {
+        type: String,
+        required: true,
+        maxlength: 280,
+      },
+      reviewerName: {
+        type: String,
+        required: true,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      }
     },
   ],
   items: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Item',
+    itemName: {
+        type: String,
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    inStock: {
+        type: Boolean,
+        required: true,
+    },
+    inventoryCount: {
+        type: Number,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    sellerName: {
+        type: String,
+        required: true,
+    }
     }
   ],
 });
