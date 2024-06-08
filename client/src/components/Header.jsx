@@ -11,7 +11,7 @@ const Header = () => {
     <div>
           {Auth.loggedIn() ? (
             <>
-            {/* {Auth.getProfile().data.userName}'s profile */}
+            {/* {Auth.getUser().data.userName}'s profile */}
               <button onClick={logout}>
                 Logout
               </button>

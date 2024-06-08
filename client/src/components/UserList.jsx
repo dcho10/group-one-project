@@ -11,13 +11,19 @@ const UserList = ({users}) => {
         {users &&
           users.map((user) => (
             <div key={user._id}>
-              <div className="card mb-3">
+              <div>
                 <h4>
                   {user.userName} <br />
-                  {/* <span className="text-white" style={{ fontSize: '1rem' }}>
+                  {/* <span>
                     currently has {user.items ? user.items.length : 0}{' '}
                    
-                    {{profile.skills && profile.skills.length === 1 ? '' : 's'}}
+                    {user.items && user.items.length === 1 ? '' : 's'}
+                  </span>
+
+                  <span>
+                    currently has {user.reviews ? user.reviews.length : 0}{' '}
+                   
+                    {user.reviews && user.reviews.length === 1 ? '' : 's'}
                   </span> */}
                 </h4>
 

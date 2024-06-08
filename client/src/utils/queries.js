@@ -6,7 +6,7 @@ export const QUERY_USERS = gql`
       _id
       userName
       email
-     item{
+     items{
      itemName
      price
      inStock
