@@ -5,14 +5,14 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer >
-       <div>
+       <section>
         {location.pathname !== '/' && (
           <button onClick={() => navigate(-1)}
           >
             &larr; Go Back
           </button>
         )}
-        </div>
+        </section>
     </footer>
   );
 };

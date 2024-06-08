@@ -5,6 +5,8 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import "./Login.css"
+
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: ''});
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -41,60 +43,52 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+    <main>
+      <section className="login-container">
+        <section >
+          <h4>Login</h4>
+          <section>
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit} className="login-form">
+                <h5> Email </h5>
                 <input
                   className="form-input"
-                  placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <h5> Password </h5>
                 <input
                   className="form-input"
-                  placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
-                {/* <input
-                  className="form-input"
-                  placeholder="isSeller"
-                  name="isSeller"
-                  type="isSeller"
-                  value={formState.isSeller}
-                  onChange={handleChange}
-                /> */}
                 <button
-                  className="btn btn-block btn-primary"
+                  className="login-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  Submit
+                  Login
                 </button>
               </form>
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <section>
                 {error.message}
-              </div>
+              </section>
             )}
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </main>
   );
 };

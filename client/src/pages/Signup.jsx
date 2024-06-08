@@ -40,10 +40,10 @@ const Signup = () => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
+      <section className="col-12 col-lg-10">
+        <section className="card">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+          <section className="card-body">
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -86,13 +86,13 @@ const Signup = () => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <section className="my-3 p-3 bg-danger text-white">
                 {error.message}
-              </div>
+              </section>
             )}
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </main>
   );
 };

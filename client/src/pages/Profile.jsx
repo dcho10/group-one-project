@@ -19,7 +19,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <section>Loading...</section>;
   }
 
   if (!user?.userName) {
@@ -32,14 +32,14 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <div>
+    <section>
+      <section>
         <h2>
           Viewing {userParam ? `${user.userName}'s` : 'your'} profile.
         </h2>
 
-     </div>
-    </div>
+     </section>
+    </section>
   );
 };
 
