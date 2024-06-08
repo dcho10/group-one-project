@@ -7,6 +7,7 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const users = data?.users || [];
   
+  //console.log(users)
   return (
     <main>
       <div>
@@ -15,13 +16,16 @@ const Home = () => {
           ) : (
         
             <UserList
-            users={users}
+            users = {users}
             
           />        
         
-          )}
+          )}  
            </div>  
+           
+          
     </main>
+    
   );
 };
 
