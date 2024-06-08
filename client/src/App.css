@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--secondary);
+}
+
+:root {
+    --white: #FFFFFF;
+    --primary: #DDFFF7;
+    --secondary: #93E1D8;
+    --tertiary: #FFA69E;
+}

@@ -7,8 +7,6 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 
-//import './index.css'
-
 const router = createBrowserRouter([
   {
     path: "/",
