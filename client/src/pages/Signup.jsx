@@ -6,6 +6,8 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import "./Signup.css"
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     userName: '',
@@ -39,54 +41,66 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <section className="col-12 col-lg-10">
-        <section className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <section className="card-body">
+    <main>
+      <section className="signup-container">
+        <section>
+          <h4>Sign Up</h4>
+          <section>
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit} className="signup-card">
+                <h5> Username </h5>
                 <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
+                  placeholder="Username"
+                  name="userName"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <h5> Email </h5>
                 <input
-                  className="form-input"
-                  placeholder="Your email"
+                  placeholder="Email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <h5> Password </h5>
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <section className="buttons">
+                  <button
+                    className="submit-signup"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                  >
+                    Sign Up
+                  </button>
+
+                  <Link to="/login">
+                    <button
+                      className="login-btn"
+                      style={{ cursor: 'pointer' }}
+                      type="submit"
+                    >
+                      Go Back
+                    </button>
+                  </Link>
+                </section>
               </form>
             )}
 
             {error && (
-              <section className="my-3 p-3 bg-danger text-white">
+              <section>
                 {error.message}
               </section>
             )}

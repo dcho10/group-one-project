@@ -71,13 +71,25 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
-                  className="login-btn"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Login
-                </button>
+                <section className="buttons">
+                  <button
+                    className="login-btn"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                  >
+                    Login
+                  </button>
+
+                  <Link to="/signup">
+                    <button
+                      className="signup-btn"
+                      style={{ cursor: 'pointer' }}
+                      type="button"
+                    >
+                      Signup
+                    </button>
+                  </Link>
+                </section>
               </form>
             )}
 
