@@ -5,7 +5,7 @@ const typeDefs = `
     email: String
     password: String
     items: [Item]
-    reviews: [Review]
+    reviews: [Review] 
   }
 
   input ItemInput {
@@ -45,8 +45,8 @@ const typeDefs = `
   }
 
  type Query {
-    users: [User]
-    user(userName: String): User
+    users: [User]!
+    user(userId: ID!): User
     me: User
   }
 

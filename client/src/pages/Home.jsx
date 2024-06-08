@@ -1,10 +1,11 @@
 import { useQuery } from '@apollo/client';
+import UserList from '../components/UserList';
 
-import { QUERY_USER } from '../utils/queries';
+import { QUERY_USERS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USER);
-  const users = data?.user || [];
+  const { loading, data } = useQuery(QUERY_USERS);
+  const users = data?.users || [];
   
   return (
     <main>
@@ -13,7 +14,10 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
         
-          users           
+            <UserList
+            users={users}
+            
+          />        
         
           )}
            </div>  
