@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Confirm from "./pages/ConfirmationPage";
+import Buy from "./pages/Buy";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       {
         path: 'confirm',
         element: <Confirm />
-      },  
+      },
+      {
+        path: '/buy',
+        element: <Buy />
+      },   
       {
         path: '/profiles/:username',
         element: <Profile />
