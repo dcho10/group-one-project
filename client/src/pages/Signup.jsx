@@ -55,7 +55,12 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit} className="signup-card">
                 <h5> Username </h5>
                 <input
+<<<<<<< HEAD
                   placeholder="Username"
+=======
+                  className="form-input"
+                  placeholder="Your username"
+>>>>>>> 336665a8eccfb0986299742caced15298fd65336
                   name="userName"
                   type="text"
                   value={formState.name}

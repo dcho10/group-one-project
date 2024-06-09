@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {Link} from "react-router-dom"
 
 import "./Home.css"
@@ -12,3 +13,37 @@ export default function Home() {
     </>
   )
 }
+=======
+import { useQuery } from '@apollo/client';
+import UserList from '../components/UserList';
+
+import { QUERY_USERS } from '../utils/queries';
+
+const Home = () => {
+  const { loading, data } = useQuery(QUERY_USERS);
+  const users = data?.users || [];
+  
+  //console.log(users)
+  return (
+    <main>
+      <div>
+                {loading ? (
+            <div>Loading...</div>
+          ) : (
+        
+            <UserList
+            users = {users}
+            
+          />        
+        
+          )}  
+           </div>  
+           
+          
+    </main>
+    
+  );
+};
+
+export default Home;
+>>>>>>> 336665a8eccfb0986299742caced15298fd65336
