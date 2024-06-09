@@ -5,9 +5,6 @@ export default function Profile() {
     // RUBAL: Delete other 3 ListingCards, they're used as sampling for you
     <>
       <ListingCard />
-      <ListingCard />
-      <ListingCard />
-      <ListingCard />
     </>
 
   )
