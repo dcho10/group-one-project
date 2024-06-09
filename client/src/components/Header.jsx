@@ -19,6 +19,8 @@ export default function Header() {
                 <Link to="/me" >
                   <button className="profile" > 👤 </button>
                 </Link>
+
+                {/* Logout needs to redirect to homepage */}
                 <button onClick={logout} className="logout">
                   ➡️
                 </button>

@@ -20,6 +20,8 @@ export default function Message() {
                     <textarea></textarea>
                 </section>
 
+                {/* When user submits it should go back to the homepage */}
+                {/* onClick does something? */}
                 <button type="submit" className="submit"> Submit </button>
             </form>
         </section>
