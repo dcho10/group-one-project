@@ -15,21 +15,21 @@ export default function Header() {
       <section className="links">
         {Auth.loggedIn() ? (
               <>
-                <Link to="/me">
-                  <button>
-                    My Profile
-                  </button>              
+              <section className="loggedIn-btn">
+                <Link to="/me" >
+                  <button className="profile" > 👤 </button>
                 </Link>
-                <button onClick={logout}>
-                  Logout
+                <button onClick={logout} className="logout">
+                  ➡️
                 </button>
+              </section>
               </>
             ) : (
               <>
-                <Link to="/login">
+                <Link to="/login" className="login">
                   Login
                 </Link>
-                <Link to="/signup">
+                <Link to="/signup" className="signup">
                   Signup
                 </Link>
               </>

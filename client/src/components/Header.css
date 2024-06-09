@@ -20,3 +20,28 @@
     margin: 1rem;
     color: var(--primary);
 }
+
+.loggedIn-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.profile, .logout {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 40px;
+    border: none;
+    font-size: 25px;
+    background-color: var(--primary);
+}
+
+.profile:hover, .logout:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.login, .signup {
+    font-weight: bold;
+    color: var(--primary);
+}
