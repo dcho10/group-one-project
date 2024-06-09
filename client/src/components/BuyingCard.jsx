@@ -11,6 +11,7 @@ export default function BuyingCard () {
             <section className="selection-buttons">
                 <section className="response-buttons">
                     {/* Like and pass button should share same functionality of moving to the next item once clicked */}
+                    {/* Possible state? */}
                     <button className="like"> ✔️ </button>
                     <button className="pass"> ❌ </button>
                     <Link to="/message">
@@ -18,6 +19,7 @@ export default function BuyingCard () {
                     </Link>
                 </section>
                 {/* Info button should display the info section once clicked */}
+                {/* Possible state? */}
                 <button className="info-btn"> ℹ️ </button>
             </section>
 

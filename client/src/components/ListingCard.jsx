@@ -9,6 +9,7 @@ export default function ListingCard() {
         <section className="listing-page">
         {/* // RUBAL: Use .map to generate all the dynamic listings at once */}
         {/* VIEW ALL LISTINGS HERE: */}
+        {/* Possible state? */}
 
           <section className="listings">
             <h2> Your Listings: </h2>
@@ -18,6 +19,7 @@ export default function ListingCard() {
               {/* Make date dynamic here */}
             </container>
           </section>
+          
           {/* RUBAL: Find method to display singular listing on the side after a user clicks on one to see */}
           {/* VIEW THE SINGLE LISTING THE USER WANTS TO SEE */}
 

@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Confirm from "./pages/ConfirmationPage";
 import User from "./pages/User.jsx";
 import Buy from "./pages/Buy";
+import Message from "./pages/Message";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       {
         path: '/buy',
         element: <Buy />
-      },   
+      },
+      {
+        path: '/message/',
+        element: <Message />
+      },      
       {
         path: '/profiles/:username',
         element: <Profile />

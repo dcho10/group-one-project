@@ -6,16 +6,16 @@ export default function ConfirmationPage() {
     return (
         <>
         <section className="confirmation-container">
-            <h1> Are you a buyer or a seller? </h1>
+            <h1> What brings you here today? </h1>
             <section className="buyer-seller">
                 <Link to="/buy">
                     <button className="buyer-btn">
-                        Buyer
+                        I want to buy!
                     </button>       
                 </Link>
                 <Link to="/sell">
                     <button className="seller-btn">
-                        Seller
+                        I want to sell!
                     </button>           
                 </Link>
             </section>

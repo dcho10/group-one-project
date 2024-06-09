@@ -86,6 +86,7 @@ const Signup = () => {
                     Sign Up
                   </button>
 
+                  {/* After signup the user should be redirected to confirmation page */}
                   <Link to="/login">
                     <button
                       className="login-btn"
