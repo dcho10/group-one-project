@@ -6,35 +6,7 @@ export default function Header() {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
-<<<<<<< HEAD
   }
-=======
-  };
-  return (
-   <header>
-    <div>
-          {Auth.loggedIn() ? (
-            <>
-            {/* {Auth.getUser().data.userName}'s profile */}
-              <button onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login">
-                Login
-              </Link>
-              <Link to="/signup">
-                Signup
-              </Link>
-            </>
-          )}
-        </div> 
-       </header>
-  );
-};
->>>>>>> 336665a8eccfb0986299742caced15298fd65336
 
   return (
     <>

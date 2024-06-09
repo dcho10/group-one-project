@@ -5,16 +5,9 @@ import App from './App.jsx'
 import Home from './pages/Home.jsx'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-<<<<<<< HEAD
 import Profile from './pages/Profile';
 import Confirm from "./pages/ConfirmationPage";
 import Buy from "./pages/Buy";
-=======
-import User from './pages/User';
-import Error from './pages/Error';
-
-//import './index.css'
->>>>>>> 336665a8eccfb0986299742caced15298fd65336
 
 const router = createBrowserRouter([
   {
@@ -33,7 +26,6 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />
-<<<<<<< HEAD
       },
       {
         path: 'confirm',
@@ -50,11 +42,6 @@ const router = createBrowserRouter([
       {
         path: '/me',
         element: <Profile />
-=======
-      }, {
-        path: '/users/:userId',
-        element: <User />
->>>>>>> 336665a8eccfb0986299742caced15298fd65336
       }, 
       // {
       //   path: '/me',
