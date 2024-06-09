@@ -1,46 +1,14 @@
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import ListingCard from "../components/ListingCard"
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
-
-import Auth from '../utils/auth';
-
-const Profile = () => {
-  const { userName: userParam } = useParams();
-
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { userName: userParam },
-  });
-
-  const user = data?.me || data?.user || {};
-  // navigate to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.userName === userParam) {
-    return <Navigate to="/me" />;
-  }
-
-  if (loading) {
-    return <section>Loading...</section>;
-  }
-
-  if (!user?.userName) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
-
+export default function Profile() {
   return (
-    <section>
-      <section>
-        <h2>
-          Viewing {userParam ? `${user.userName}'s` : 'your'} profile.
-        </h2>
+    // RUBAL: Delete other 3 ListingCards, they're used as sampling for you
+    <>
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+    </>
 
-     </section>
-    </section>
-  );
-};
-
-export default Profile;
+  )
+}

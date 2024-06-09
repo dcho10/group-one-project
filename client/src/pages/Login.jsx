@@ -45,7 +45,7 @@ const Login = (props) => {
   return (
     <main>
       <section className="login-container">
-        <section >
+        <section className="login-content">
           <h4>Login</h4>
           <section>
             {data ? (

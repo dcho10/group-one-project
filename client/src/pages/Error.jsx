@@ -6,7 +6,7 @@ export default function ErrorPage() {
 
   return (
     <section id="error-page">
-      <h1>Oops!</h1>
+      <p>Oops!</p>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>{error.statusText || error.message}</i>

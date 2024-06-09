@@ -43,7 +43,7 @@ const Signup = () => {
   return (
     <main>
       <section className="signup-container">
-        <section>
+        <section className="signup-content">
           <h4>Sign Up</h4>
           <section>
             {data ? (

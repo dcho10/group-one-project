@@ -15,6 +15,11 @@ export default function Header() {
       <section className="links">
         {Auth.loggedIn() ? (
               <>
+                <Link to="/me">
+                  <button>
+                    My Profile
+                  </button>              
+                </Link>
                 <button onClick={logout}>
                   Logout
                 </button>

@@ -1,9 +1,13 @@
 .login-container {
     display: flex;
     justify-content: center;
+    padding: 2rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.login-content {
     border: solid 5px var(--primary);
     border-radius: 20px;
-    margin: 5rem 15rem;
     padding: 2rem;
 }
 

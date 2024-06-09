@@ -1,0 +1,15 @@
+.home-content {
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    color: var(--primary);
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
