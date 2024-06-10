@@ -1,20 +1,37 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
 import Auth from "../utils/auth";
 import "./Header.css"
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(Auth.loggedIn());
+  const navigate = useNavigate();
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    setIsLoggedIn(false);
+    navigate("/");
   }
+  
+  useEffect(() => {
+    const handleAuthChange = () => {
+      setIsLoggedIn(Auth.loggedIn());
+    };
+
+    window.addEventListener("authChange", handleAuthChange);
+    
+    return () => {
+      window.removeEventListener("authChange", handleAuthChange);
+    };
+  }, []);
 
   return (
     <>
     <header className="header">
       <a href="/" className="home"> Shopping </a>
       <section className="links">
-        {Auth.loggedIn() ? (
-              <>
+        {isLoggedIn ? (
               <section className="loggedIn-btn">
                 <Link to="/profiles/me" >
                   <button className="profile" > 👤 </button>
@@ -25,7 +42,6 @@ export default function Header() {
                   ➡️
                 </button>
               </section>
-              </>
             ) : (
               <>
                 <Link to="/login" className="login">

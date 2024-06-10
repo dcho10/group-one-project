@@ -9,7 +9,6 @@ class AuthService {
     const token = this.getToken();
     // If there is a token and it's not expired, return `true`
     return token && !this.isTokenExpired(token) ? true : false;
-    return token ? true : false;
   }
 
   isTokenExpired(token) {
@@ -30,11 +29,12 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
+    window.dispatchEvent(new Event("authChange"));
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload("/");
+    window.dispatchEvent(new Event("authChange"));
   }
 }
 
