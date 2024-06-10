@@ -1,0 +1,40 @@
+.listing-form {
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.listing-title, .listing-description {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.listing-title input {
+    height: 3rem;
+    width: 45rem;
+    border: solid 2px var(--primary);
+    margin: 0.25rem 0;
+    border-radius: 10px;
+    background-color: var(--white);
+    font-size: 24px;
+}
+
+.listing-description textarea {
+    resize: none;
+    height: 25rem;
+    width: 45rem;
+    border-radius: 15px;
+    border: solid 5px var(--primary);
+    margin: 0.25rem 0;
+    background-color: var(--white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+}
+
+.listing-description textarea:focus, .listing-title input:focus {
+    outline: none !important;
+}
+
+.listing-title h2, .listing-description h2 {
+    font-size: 32px;
+}

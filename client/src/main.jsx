@@ -6,10 +6,10 @@ import Home from './pages/Home.jsx'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import Confirm from "./pages/ConfirmationPage";
 import User from "./pages/User.jsx";
 import Buy from "./pages/Buy";
 import Message from "./pages/Message";
+import Sell from "./pages/Sell";
 
 const router = createBrowserRouter([
   {
@@ -30,34 +30,25 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       {
-        path: '/confirm',
-        element: <Confirm />
-      },
-      {
         path: '/buy',
         element: <Buy />
+      },
+      {
+        path: '/sell',
+        element: <Sell />
       },
       {
         path: '/message/',
         element: <Message />
       },      
       {
-        path: '/profiles/:username',
-        element: <Profile />
-      }, 
-      {
         path: '/user/:userId',
         element: <User />
       }, 
-      
       {
-        path: '/me',
+        path: '/profiles/me',
         element: <Profile />
       }, 
-      // {
-      //   path: '/me',
-      //   element: <Profile />
-      // }, 
       
 
     ]

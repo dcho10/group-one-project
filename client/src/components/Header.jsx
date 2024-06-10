@@ -16,7 +16,7 @@ export default function Header() {
         {Auth.loggedIn() ? (
               <>
               <section className="loggedIn-btn">
-                <Link to="/me" >
+                <Link to="/profiles/me" >
                   <button className="profile" > 👤 </button>
                 </Link>
 

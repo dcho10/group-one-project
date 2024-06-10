@@ -5,7 +5,7 @@
 }
 
 .message-container h2 {
-    font-size: 40px;
+    font-size: 32px;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     margin: 0.25rem 0;
@@ -16,8 +16,13 @@
 }
 
 .message-input input {
-    height: 2.5rem;
+    height: 3rem;
     width: 45rem;
+    border-radius: 15px;
+    border: solid 5px var(--primary);
+    margin: 0.25rem 0;
+    background-color: var(--white);
+    font-size: 24px;
 }
 
 .message-input textarea {

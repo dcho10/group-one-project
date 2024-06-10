@@ -25,6 +25,8 @@ const Login = (props) => {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState)
+    
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -32,7 +34,11 @@ const Login = (props) => {
  
       Auth.login(data.login.token);
 
-      navigate("/confirm")
+      if (formState.isSeller) {
+        navigate("/sell");
+      } else {
+        navigate("/buy");
+      }
     } catch (e) {
       console.error(e);
     }

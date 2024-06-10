@@ -37,6 +37,10 @@ h5 {
     background-color: var(--white);
 }
 
+.form-input:focus {
+    outline: none !important;
+}
+
 .buttons {
     display: flex;
     justify-content: space-between;

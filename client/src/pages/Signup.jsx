@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { useNavigate } from "react-router-dom";
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
@@ -138,7 +137,6 @@ const Signup = () => {
                     <button
                       className="login-btn"
                       style={{ cursor: 'pointer' }}
-                      type="submit"
                     >
                       Login
                     </button>
