@@ -95,24 +95,25 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-              <section className="checkbox">
-                <section>
-                  <Checkbox
-                    label="Buyer"
-                    value={checkedOne}
-                    onChange={handleCheckboxChangeOne}
-                  />
+                <section className="checkbox">
+                  <section>
+                    <Checkbox
+                      label="Buyer"
+                      value={checkedOne}
+                      onChange={handleCheckboxChangeOne}
+                    />
+                  </section>
+                  
+                  <section>
+                    <Checkbox
+                      label="Seller"
+                      value={checkedTwo}
+                      onChange={handleCheckboxChangeTwo}
+                    />
+                  </section>
                 </section>
-                
-                <section>
-                  <Checkbox
-                    label="Seller"
-                    value={checkedTwo}
-                    onChange={handleCheckboxChangeTwo}
-                  />
-                </section>
-              </section>
 
+                <section className="signup-login">
                   <button
                     className="submit-signup"
                     style={{ cursor: 'pointer' }}
@@ -131,6 +132,7 @@ const Signup = () => {
                       Login
                     </button>
                   </Link>
+
                 </section>
               </form>
             {error && (
