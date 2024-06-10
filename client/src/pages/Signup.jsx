@@ -15,7 +15,7 @@ const Signup = () => {
     userName: '',
     email: '',
     password: '',
-    isSeller: '',
+    isSeller: false,
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -44,8 +44,11 @@ const Signup = () => {
 
       Auth.login(data.addUser.token);
 
-      // Condition to navigate based on what the user has selected (i.e. seller = "/sell", buyer = "/buy")
-      navigate("/")
+      if (formState.isSeller) {
+        navigate("/sell");
+      } else {
+        navigate("/buy");
+      }
     } catch (e) {
       console.error(e);
     }
@@ -53,12 +56,20 @@ const Signup = () => {
 
   const handleCheckboxChangeOne = () => {
     setCheckedOne(!checkedOne)
-    setCheckedTwo(false)
+    setCheckedTwo(false);
+    setFormState({
+      ...formState,
+      isSeller: false,
+    });
   };
 
   const handleCheckboxChangeTwo = () => {
     setCheckedTwo(!checkedTwo);
     setCheckedOne(false);
+    setFormState({
+      ...formState,
+      isSeller: true,
+    })
   };
 
   return (
