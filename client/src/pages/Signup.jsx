@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
+import { useNavigate } from "react-router-dom";
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import Checkbox from "../components/Checkbox"
 
 import "./Signup.css"
 
@@ -15,6 +17,11 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const [checkedOne, setCheckedOne] = useState(false);
+  const [checkedTwo, setCheckedTwo] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,9 +42,22 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
+
+      // Condition to navigate based on what the user has selected (i.e. seller = "/sell", buyer = "/buy")
+      navigate("/")
     } catch (e) {
       console.error(e);
     }
+  };
+
+  const handleCheckboxChangeOne = () => {
+    setCheckedOne(!checkedOne)
+    setCheckedTwo(false)
+  };
+
+  const handleCheckboxChangeTwo = () => {
+    setCheckedTwo(!checkedTwo);
+    setCheckedOne(false);
   };
 
   return (
@@ -46,12 +66,6 @@ const Signup = () => {
         <section className="signup-content">
           <h4>Sign Up</h4>
           <section>
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
               <form onSubmit={handleFormSubmit} className="signup-card">
                 <h5> Username </h5>
                 <input
@@ -80,20 +94,23 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-
-                <section className="checkbox">
-                  <section>
-                    <label className="label">
-                      <input type="checkbox" id="buyer" className="buyer-checkbox"/> Buyer
-                    </label>
-                  </section>
-
-                  <section>
-                    <label className="label">
-                      <input type="checkbox" id="seller" className="seller-checkbox"/> Seller
-                    </label>
-                  </section>
+              <section className="checkbox">
+                <section>
+                  <Checkbox
+                    label="Buyer"
+                    value={checkedOne}
+                    onChange={handleCheckboxChangeOne}
+                  />
                 </section>
+                
+                <section>
+                  <Checkbox
+                    label="Seller"
+                    value={checkedTwo}
+                    onChange={handleCheckboxChangeTwo}
+                  />
+                </section>
+              </section>
 
                 <section className="buttons">
                   <button
@@ -116,8 +133,6 @@ const Signup = () => {
                   </Link>
                 </section>
               </form>
-            )}
-
             {error && (
               <section>
                 {error.message}
