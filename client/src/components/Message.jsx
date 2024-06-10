@@ -7,17 +7,17 @@ export default function Message() {
             <form className="message-form">
                 <section className="message-input">
                     <h2> Name </h2>
-                    <input type="text"></input>
+                    <input type="text" placeholder="Your name"></input>
                 </section>
 
                 <section className="message-input">
                     <h2> Contact </h2>
-                    <input type="text"></input>
+                    <input type="text" placeholder="Email or number"></input>
                 </section>
 
                 <section className="message-input">
                     <h2> Message them! </h2>
-                    <textarea></textarea>
+                    <textarea placeholder="Enter your message"></textarea>
                 </section>
 
                 {/* When user submits it should go back to the homepage */}

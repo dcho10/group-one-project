@@ -3,35 +3,40 @@
     justify-content: center;
     padding: 2rem;
     font-family: "Open Sans", sans-serif;
+    
 }
 
 .login-content {
-    border: solid 5px var(--primary);
+    border: solid 5px;
     border-radius: 20px;
     padding: 2rem;
+    background-color: var(--white);
 }
 
 h4 {
     font-size: 52px;
     text-align: center;
-    color: var(--primary);
+    color: var(--secondary);
+    background-color: var(--white);
+    
 }
 
 h5 {
     font-size: 32px;
-    color: var(--primary);
+    background-color: var(--white);
 }
 
 .login-form {
     display: grid;
     gap: 1rem;
     padding: 2rem;
+    background-color: var(--white);
 }
 
 .form-input {
     height: 2.5rem;
     width: 25rem;
-    border: solid 2px var(--primary);
+    border: solid 5px var(--secondary);
     border-radius: 10px;
     font-size: 22px;
     background-color: var(--white);
@@ -44,6 +49,11 @@ h5 {
 .buttons {
     display: flex;
     justify-content: space-between;
+    background-color: var(--white);
+}
+
+.buttons a, .signup-login, .signup-login a {
+    background-color: var(--white);
 }
 
 .login-btn, .signup-btn {
@@ -53,7 +63,7 @@ h5 {
     font-size: 18px;
     font-weight: bold;
     color: var(--white);
-    border: solid;
+    border: solid 5px var(--secondary);
     border-radius: 20px;
     background-color: var(--tertiary);
 }

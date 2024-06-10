@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
+import Message from "./Message";
 import "./BuyingCard.css"
 
 export default function BuyingCard () {
@@ -8,6 +9,12 @@ export default function BuyingCard () {
 
     const toggleInfo = () => {
         setShowInfo(!showInfo)
+    }
+
+    const [showMessage, setShowMessage] = useState(false);
+
+    const displayMessage = () => {
+        setShowMessage(!showMessage)
     }
 
     return (
@@ -22,9 +29,7 @@ export default function BuyingCard () {
                     {/* Possible state? */}
                     <button className="like"> ✔️ </button>
                     <button className="pass"> ❌ </button>
-                    <Link to="/message">
-                        <button className="message"> 💬 </button>            
-                    </Link>
+                    <button className="message" onClick={displayMessage}> 💬 </button>            
                 </section>
 
                 <button className="info-btn" onClick={toggleInfo}> ℹ️ </button>
@@ -40,6 +45,10 @@ export default function BuyingCard () {
                 </section>
             )}
         </section>
+        
+        {showMessage && (
+            <Message />
+        )}
 
         </>
     )

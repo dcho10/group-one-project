@@ -6,21 +6,24 @@
 }
 
 .signup-content {
-    border: solid 5px var(--primary);
+    border: solid 5px;
     border-radius: 20px;
     padding: 2rem;
+    background-color: var(--white);
 }
 
 .signup-card {
     display: grid;
     gap: 1rem;
     padding: 2rem;
+    background-color: var(--white);
 }
 
 .checkbox {
     display: flex;
     justify-content: space-between;
     margin: 1rem 0 0 0;
+    background-color: var(--white);
 }
 
 .signup-login {
@@ -31,12 +34,13 @@
 input {
     height: 2rem;
     width: 2rem;
+    
 }
 
 label {
     font-size: 36px;
     font-weight: bold;
-    color: var(--white);
+    background-color: var(--white);
 }
 
 .submit-signup {
@@ -46,7 +50,7 @@ label {
     font-size: 18px;
     font-weight: bold;
     color: var(--white);
-    border: solid;
+    border: solid 5px var(--secondary);
     border-radius: 20px;
     background-color: var(--tertiary);
 }

@@ -8,7 +8,6 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import User from "./pages/User.jsx";
 import Buy from "./pages/Buy";
-import Message from "./pages/Message";
 import Sell from "./pages/Sell";
 
 const router = createBrowserRouter([
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
         path: '/sell',
         element: <Sell />
       },
-      {
-        path: '/message/',
-        element: <Message />
-      },      
       {
         path: '/user/:userId',
         element: <User />

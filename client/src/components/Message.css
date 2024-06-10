@@ -2,35 +2,53 @@
     display: grid;
     justify-content: center;
     gap: 1rem;
+    background-color: var(--white);
+}
+
+.message-container {
+    border: solid 5px;
+    border-radius: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    margin: 5rem;
+    padding: 2rem;
+    font-family: "Open Sans", sans-serif;
 }
 
 .message-container h2 {
     font-size: 32px;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
-    margin: 0.25rem 0;
+    background-color: var(--white);
 }
 
 .message-form {
     margin: 0.5rem;
 }
 
+.message-input {
+    background-color: var(--white);
+}
+
 .message-input input {
     height: 3rem;
     width: 45rem;
     border-radius: 15px;
-    border: solid 5px var(--primary);
+    border: solid 5px var(--secondary);
     margin: 0.25rem 0;
     background-color: var(--white);
     font-size: 24px;
+    
 }
 
 .message-input textarea {
     resize: none;
-    height: 25rem;
+    height: 15rem;
     width: 45rem;
     border-radius: 15px;
-    border: solid 5px var(--primary);
+    border: solid 5px var(--secondary);
     margin: 0.25rem 0;
     background-color: var(--white);
     font-family: "Open Sans", sans-serif;
@@ -47,7 +65,7 @@
     font-size: 18px;
     font-weight: bold;
     color: var(--white);
-    border: solid;
+    border: solid 5px var(--secondary);
     border-radius: 20px;
     background-color: var(--tertiary);
 }

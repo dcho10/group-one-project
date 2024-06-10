@@ -8,6 +8,7 @@
     margin: 5rem;
     padding: 2rem;
     font-family: "Open Sans", sans-serif;
+    scroll-snap-align: start;
 }
 
 .info {
@@ -29,7 +30,7 @@
 .listing-title {
     text-align: center;
     background-color: var(--white);
-    padding: 1rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
 }
 
 .selection-buttons {
