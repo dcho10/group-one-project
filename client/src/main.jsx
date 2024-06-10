@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App.jsx'
@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Confirm from "./pages/ConfirmationPage";
+import User from "./pages/User.jsx";
 import Buy from "./pages/Buy";
 import Message from "./pages/Message";
 
@@ -45,9 +46,20 @@ const router = createBrowserRouter([
         element: <Profile />
       }, 
       {
+        path: '/user/:userId',
+        element: <User />
+      }, 
+      
+      {
         path: '/me',
         element: <Profile />
       }, 
+      // {
+      //   path: '/me',
+      //   element: <Profile />
+      // }, 
+      
+
     ]
   },
 ]);
