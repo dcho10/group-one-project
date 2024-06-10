@@ -28,7 +28,7 @@ h5 {
     padding: 2rem;
 }
 
-input {
+.form-input {
     height: 2.5rem;
     width: 25rem;
     border: solid 2px var(--primary);
