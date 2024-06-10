@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       {
-        path: 'confirm',
+        path: '/confirm',
         element: <Confirm />
       },
       {

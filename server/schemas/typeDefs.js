@@ -4,6 +4,7 @@ const typeDefs = `
     userName: String
     email: String
     password: String
+    isSeller: Boolean
     items: [Item]
     reviews: [Review]
   }
@@ -51,7 +52,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    addUser(userName: String, email: String, password: String): Auth
+    addUser(userName: String, email: String, password: String, isSeller: Boolean): Auth
 
     login(email: String, password: String): Auth
 

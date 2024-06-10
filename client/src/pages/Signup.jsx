@@ -13,6 +13,7 @@ const Signup = () => {
     userName: '',
     email: '',
     password: '',
+    isSeller: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -77,7 +78,8 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <section className="buttons">
+                 <h5> Seller? </h5>
+                  <section className="buttons">
                   <button
                     className="submit-signup"
                     style={{ cursor: 'pointer' }}

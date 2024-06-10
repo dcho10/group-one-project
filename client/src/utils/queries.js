@@ -6,6 +6,7 @@ export const QUERY_USERS = gql`
       _id
       userName
       email
+      isSeller
      items{
      itemName
      price
@@ -14,7 +15,7 @@ export const QUERY_USERS = gql`
      description
      sellerName
      }
-     review{
+     reviews{
      reviewBody
      reviewerName
      }
@@ -28,7 +29,8 @@ export const QUERY_USER = gql`
       _id
       userName
       email
-     item{
+      isSeller
+     items{
      itemName
      price
      inStock
@@ -36,7 +38,7 @@ export const QUERY_USER = gql`
      description
      sellerName
      }
-     review{
+     reviews{
      reviewBody
      reviewerName
      }
@@ -50,7 +52,8 @@ export const QUERY_ME = gql`
       _id
       userName
       email
-    item{
+      isSeller
+    items{
      itemName
      price
      inStock
@@ -58,7 +61,7 @@ export const QUERY_ME = gql`
      description
      sellerName
      }
-     review{
+     reviews{
      reviewBody
      reviewerName
      }
