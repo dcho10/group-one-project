@@ -26,6 +26,12 @@
     padding: 0.2rem;
 }
 
+.listing-title {
+    text-align: center;
+    background-color: var(--white);
+    padding: 1rem 0 1rem 0;
+}
+
 .selection-buttons {
     background-color: var(--white);
     display: flex;
