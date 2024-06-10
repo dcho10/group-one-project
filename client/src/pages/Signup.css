@@ -23,6 +23,11 @@
     margin: 1rem 0 0 0;
 }
 
+.signup-login {
+    display: flex;
+    justify-content: space-between;
+}
+
 input {
     height: 2rem;
     width: 2rem;
