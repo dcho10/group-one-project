@@ -1,13 +1,13 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
-  query user($userName: String!) {
-    user(userName: $userName) {
+export const QUERY_USERS = gql`
+  query users {
+    users {
       _id
       userName
       email
       isSeller
-     item{
+     items{
      itemName
      price
      inStock
@@ -15,7 +15,30 @@ export const QUERY_USER = gql`
      description
      sellerName
      }
-     review{
+     reviews{
+     reviewBody
+     reviewerName
+     }
+    }
+  }
+`;
+
+export const QUERY_USER = gql`
+  query user($userId: ID!) {
+    user(userId: $userId) {
+      _id
+      userName
+      email
+      isSeller
+     items{
+     itemName
+     price
+     inStock
+     inventoryCount
+     description
+     sellerName
+     }
+     reviews{
      reviewBody
      reviewerName
      }
@@ -30,7 +53,7 @@ export const QUERY_ME = gql`
       userName
       email
       isSeller
-      item{
+    items{
      itemName
      price
      inStock
@@ -38,10 +61,23 @@ export const QUERY_ME = gql`
      description
      sellerName
      }
-     review{
+     reviews{
      reviewBody
      reviewerName
      }
     }
   }
+`;
+
+export const QUERY_ITEM = gql`
+  query item {
+    item {
+     itemName
+     price
+     inStock
+     inventoryCount
+     description
+     sellerName
+     }
+    }
 `;

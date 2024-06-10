@@ -1,7 +1,7 @@
 import decode from 'jwt-decode';
 
 class AuthService {
-  getProfile() {
+  getUser() {
     return decode(this.getToken());
   }
 
@@ -9,6 +9,7 @@ class AuthService {
     const token = this.getToken();
     // If there is a token and it's not expired, return `true`
     return token && !this.isTokenExpired(token) ? true : false;
+    return token ? true : false;
   }
 
   isTokenExpired(token) {

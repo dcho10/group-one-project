@@ -11,6 +11,7 @@ const Footer = () => {
           >
             &larr; Go Back
           </button>
+          
         )}
         </section>
     </footer>
