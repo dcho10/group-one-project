@@ -26,7 +26,7 @@ export default function ListingCard() {
           <section className="single-listing">
             <img></img>
             {/* Add img here */}
-            <section className="listing-info">
+            <section className="listing-info-content">
               <h3> Listing title goes here </h3>
               <p> Comments: Dynamic number goes here </p>
               <p> Posted: Date goes here</p>
