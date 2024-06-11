@@ -2,17 +2,27 @@
     display: grid;
     justify-content: center;
     font-family: "Open Sans", sans-serif;
+    border: solid 5px;
+    border-radius: 20px;
+    background-color: var(--white);
+    margin: 2rem;
+    padding: 2rem;
 }
 
-.listing-title, .listing-description {
+.listing-header input {
+    background-color: var(--secondary);
+}
+
+.listing-header, .listing-description {
     display: grid;
     gap: 0.5rem;
+    background-color: var(--white);
 }
 
-.listing-title input {
+.listing-header input {
     height: 3rem;
     width: 45rem;
-    border: solid 2px var(--primary);
+    border: solid 5px var(--secondary);
     margin: 0.25rem 0;
     border-radius: 10px;
     background-color: var(--white);
@@ -24,17 +34,18 @@
     height: 25rem;
     width: 45rem;
     border-radius: 15px;
-    border: solid 5px var(--primary);
+    border: solid 5px var(--secondary);
     margin: 0.25rem 0;
     background-color: var(--white);
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
 }
 
-.listing-description textarea:focus, .listing-title input:focus {
+.listing-description textarea:focus, .listing-header input:focus {
     outline: none !important;
 }
 
-.listing-title h2, .listing-description h2 {
+.listing-header h2, .listing-description h2 {
     font-size: 32px;
+    background-color: var(--white);
 }

@@ -24,6 +24,12 @@
     background-color: var(--white);
 }
 
+.message-container p {
+    background-color: var(--white);
+    text-align: center;
+    font-weight: bold;
+}
+
 .message-form {
     margin: 0.5rem;
 }
@@ -40,7 +46,6 @@
     margin: 0.25rem 0;
     background-color: var(--white);
     font-size: 24px;
-    
 }
 
 .message-input textarea {

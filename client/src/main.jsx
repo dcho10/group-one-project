@@ -5,6 +5,7 @@ import App from './App.jsx'
 import Home from './pages/Home.jsx'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Confirm from "./pages/ConfirmationPage";
 import Profile from './pages/Profile';
 import User from "./pages/User.jsx";
 import Buy from "./pages/Buy";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       {
+        path: '/confirm',
+        element: <Confirm />
+      },
+      {
         path: '/buy',
         element: <Buy />
       },
@@ -37,7 +42,7 @@ const router = createBrowserRouter([
         element: <Sell />
       },
       {
-        path: '/user/:userId',
+        path: '/profiles2',
         element: <User />
       }, 
       {
