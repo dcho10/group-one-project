@@ -6,7 +6,6 @@ export const QUERY_USERS = gql`
       _id
       userName
       email
-      isSeller
      items{
      itemName
      price
@@ -29,7 +28,6 @@ export const QUERY_USER = gql`
       _id
       userName
       email
-      isSeller
      items{
      itemName
      price
