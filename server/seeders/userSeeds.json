@@ -22,7 +22,6 @@
       "userName": "Max Kanat-Alexander",
       "email": "mkanatalexander@techfriends.dev",
       "password": "password02",
-      "isSeller": false,
       "reviews":
       {
         "reviewBody": "Hard to find this item, but happy to find it.",
