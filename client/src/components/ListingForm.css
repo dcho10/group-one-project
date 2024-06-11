@@ -9,17 +9,14 @@
     padding: 2rem;
 }
 
-.listing-header input {
-    background-color: var(--secondary);
-}
 
-.listing-header, .listing-description {
+.listing-header, .listing-description, .add-price {
     display: grid;
     gap: 0.5rem;
     background-color: var(--white);
 }
 
-.listing-header input {
+.listing-header input, .add-price input {
     height: 3rem;
     width: 45rem;
     border: solid 5px var(--secondary);
@@ -38,14 +35,15 @@
     margin: 0.25rem 0;
     background-color: var(--white);
     font-family: "Open Sans", sans-serif;
+    padding: 0.25rem;
     font-size: 24px;
 }
 
-.listing-description textarea:focus, .listing-header input:focus {
+.listing-description textarea:focus, .listing-header input:focus, .add-price input:focus {
     outline: none !important;
 }
 
-.listing-header h2, .listing-description h2 {
+.listing-header h2, .listing-description h2, .add-price h2 {
     font-size: 32px;
     background-color: var(--white);
 }
