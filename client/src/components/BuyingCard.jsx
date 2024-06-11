@@ -42,7 +42,11 @@ export default function BuyingCard () {
                 <section className="info">
                     <p> Description:  description goes here </p>
                     <Link to="/profiles2">
+
+  
+
                         <p> Created by: seller name goes here</p>   
+
                     </Link>
                     <p> Date: date goes here </p>
                 </section>
