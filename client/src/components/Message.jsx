@@ -4,6 +4,7 @@ export default function Message() {
     return (
         <>
         <section className="message-container">
+            <p> NOTE: Both parties must arrange their own methods of completeing a transaction </p>
             <form className="message-form">
                 <section className="message-input">
                     <h2> Name </h2>

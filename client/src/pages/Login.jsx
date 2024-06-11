@@ -34,11 +34,7 @@ const Login = (props) => {
  
       Auth.login(data.login.token);
 
-      if (formState.isSeller) {
-        navigate("/sell");
-      } else {
-        navigate("/buy");
-      }
+      navigate("/confirm");
     } catch (e) {
       console.error(e);
     }
