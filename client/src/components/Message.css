@@ -39,6 +39,7 @@
 }
 
 .message-input input {
+    padding: 0.25rem;
     height: 3rem;
     width: 45rem;
     border-radius: 15px;
@@ -49,6 +50,7 @@
 }
 
 .message-input textarea {
+    padding: 0.25rem;
     resize: none;
     height: 15rem;
     width: 45rem;

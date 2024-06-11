@@ -12,8 +12,11 @@
 }
 
 .info {
+    margin: 1rem 0;
     padding: 1rem;
     background-color: var(--white);
+    border: solid var(--secondary);
+    border-radius: 10px;
 }
 
 .info h2 {
@@ -27,7 +30,13 @@
     padding: 0.2rem;
 }
 
-.listing-title {
+.listing-info {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+}
+
+.listing-title, .listing-price {
     text-align: center;
     background-color: var(--white);
     margin: 1rem 0 1rem 0;

@@ -23,8 +23,6 @@ export default function ListingForm() {
         console.log(formState);
     }
 
-
-
     return (
         <>
         <section>
@@ -32,12 +30,17 @@ export default function ListingForm() {
             <form className="listing-form">
                 <section className="listing-header">
                     <h2> Title </h2>
-                    <input type="text" className="title-input"/>
+                    <input type="text" className="title-input" placeholder="Title"/>
+                </section>
+
+                <section className="add-price">
+                    <h2> Price </h2>
+                    <input type="text" className="title-input" placeholder="Price"/>
                 </section>
 
                 <section className="listing-description">
                     <h2> Description </h2>
-                    <textarea className="description-text"></textarea>
+                    <textarea className="description-text" placeholder="Add your description"></textarea>
                 </section>
 
                 {/* Figure out state to redirect to home after submit */}
