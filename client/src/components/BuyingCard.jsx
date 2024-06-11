@@ -38,7 +38,7 @@ export default function BuyingCard () {
             {showInfo && (
                 <section className="info">
                     <p> Description:  description goes here </p>
-                    <Link to="/profile">
+                    <Link to="/profiles2">
                         <p> Created by: username goes here</p>   
                     </Link>
                     <p> Date: date goes here </p>
