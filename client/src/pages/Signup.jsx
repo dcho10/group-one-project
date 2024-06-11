@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import Checkbox from "../components/Checkbox";
 import "./Signup.css";
 
 const Signup = () => {
@@ -11,12 +10,8 @@ const Signup = () => {
     userName: '',
     email: '',
     password: '',
-    isSeller: null,
   });
   const [addUser, { error }] = useMutation(ADD_USER);
-  const [checkedOne, setCheckedOne] = useState(false);
-  const [checkedTwo, setCheckedTwo] = useState(false);
-  const [formError, setFormError] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -30,11 +25,6 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    if (formState.isSeller === null) {
-      setFormError("Please select whether you are a buyer or seller.");
-      return;
-    }
-
     try {
       const { data } = await addUser({
         variables: { ...formState },
@@ -42,28 +32,10 @@ const Signup = () => {
 
       Auth.login(data.addUser.token);
       
-      if (formState.isSeller) {
-        navigate("/sell");
-      } else {
-        navigate("/buy");
-      }
+      navigate("/confirm");
     } catch (e) {
       console.error(e);
     }
-  };
-
-  const handleCheckboxChangeOne = () => {
-    setCheckedOne(!checkedOne);
-    setCheckedTwo(false);
-    setFormState({ ...formState, isSeller: false });
-    setFormError(null);
-  };
-
-  const handleCheckboxChangeTwo = () => {
-    setCheckedTwo(!checkedTwo);
-    setCheckedOne(false);
-    setFormState({ ...formState, isSeller: true });
-    setFormError(null);
   };
 
   return (
@@ -100,23 +72,6 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <section className="checkbox">
-                <section>
-                  <Checkbox
-                    label="Buyer"
-                    value={checkedOne}
-                    onChange={handleCheckboxChangeOne}
-                  />
-                </section>
-
-                <section>
-                  <Checkbox
-                    label="Seller"
-                    value={checkedTwo}
-                    onChange={handleCheckboxChangeTwo}
-                  />
-                </section>
-              </section>
 
               <section className="signup-login">
                 <button
@@ -137,17 +92,12 @@ const Signup = () => {
                   </button>
                 </Link>
               </section>
-              {formError && (
+              {error && (
                 <section className="form-error">
-                  {formError}
+                  {error.message}
                 </section>
               )}
             </form>
-            {error && (
-              <section>
-                {error.message}
-              </section>
-            )}
           </section>
         </section>
       </section>
