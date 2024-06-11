@@ -91,7 +91,7 @@ const Login = (props) => {
             </form>
 
             {error && (
-              <section>
+              <section className="form-error">
                 {error.message}
               </section>
             )}

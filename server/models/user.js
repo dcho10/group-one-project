@@ -19,10 +19,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  isSeller: {
-    type: Boolean,
-    required: true,
-  },
+
   reviews: [
     {
       reviewBody: {
