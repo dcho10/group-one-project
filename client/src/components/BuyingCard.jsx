@@ -22,7 +22,10 @@ export default function BuyingCard () {
         <section className="buying-container">
             {/* Image goes here */}
             {/* <img> </img> */}
-            <h2 className="listing-title"> Listing Title goes here</h2>
+            <section className="listing-info">
+                <h2 className="listing-title"> Listing Title goes here</h2>
+                <h2 className="listing-price"> Price goes here </h2>
+            </section>
             <section className="selection-buttons">
                 <section className="response-buttons">
                     {/* Like and pass button should share same functionality of moving to the next item once clicked */}
@@ -38,8 +41,12 @@ export default function BuyingCard () {
             {showInfo && (
                 <section className="info">
                     <p> Description:  description goes here </p>
-                    <Link to="/profile">
-                        <p> Created by: username goes here</p>   
+                    <Link to="/profiles2">
+
+  
+
+                        <p> Created by: seller name goes here</p>   
+
                     </Link>
                     <p> Date: date goes here </p>
                 </section>
