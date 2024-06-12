@@ -68,13 +68,23 @@ export const QUERY_ME = gql`
 
 export const QUERY_ITEM = gql`
   query item {
-    item {
+    items {
      itemName
      price
      inStock
      inventoryCount
      description
      sellerName
+     }
+    }
+`;
+
+export const QUERY_REVIEW = gql`
+  query review {
+    reviews {
+      reviewBody
+      reviewerName
+      createdAt
      }
     }
 `;
