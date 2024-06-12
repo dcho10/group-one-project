@@ -9,6 +9,7 @@
         "reviewerName": "Max Kanat-Alexander"
       },
       "items":
+      [
       {
         "itemName": "Roy Halladay 2003 Blue Jays Jersey",
         "price": 300,
@@ -16,16 +17,69 @@
         "inventoryCount": 1,
         "description": "Vintage Roy Halladay jersey from the 2003 season.",
         "sellerName": "Brian Kernighan"
+      },
+      {
+        "itemName": "Jose Bautista 2010 Blue Jays Jersey",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Vintage Jose Bautista jersey from the 2010 season.",
+        "sellerName": "Brian Kernighan"
+      },
+      {
+        "itemName": "Bo Bichette 2020 Blue Jays Jersey",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Vintage Bo Bichette jersey from the 2020 season.",
+        "sellerName": "Brian Kernighan"
       }
+      ]
     },
     {
       "userName": "Max Kanat-Alexander",
       "email": "mkanatalexander@techfriends.dev",
       "password": "password02",
-      "reviews":
+      "items":
+      [
+      {
+        "itemName": "Harry Potter Novel Original Copy",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Original Harry Potter Novel",
+        "sellerName": "Max Kanat-Alexander"
+      },
+      {
+        "itemName": "Lord of The Rings Novel Original Copy",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Original Lord of The Rings Novel.",
+        "sellerName": "Max Kanat-Alexander"
+      },
+      {
+        "itemName": "1995 Goosebumps Book",
+        "price": 300,
+        "inStock": "true",
+        "inventoryCount": 1,
+        "description": "Original Goosebumps Novel",
+        "sellerName": "Max Kanat-Alexander"
+      }
+      ],
+      "reviews":[
       {
         "reviewBody": "Hard to find this item, but happy to find it.",
         "reviewerName": "Max Kanat-Alexander"
+      },
+      {
+        "reviewBody": "Hard to find this item, didn't like it.",
+        "reviewerName": "Max Kanat-Alexander"
+      },
+      {
+        "reviewBody": "Thanks for making this easy to find",
+        "reviewerName": "Max Kanat-Alexander"
       }
+    ]
     }
 ]
