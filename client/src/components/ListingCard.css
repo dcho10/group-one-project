@@ -11,6 +11,10 @@
     padding: 1vw;
 }
 
+.listing-container:hover {
+    cursor: pointer;
+}
+
 h1 {
     font-size: 5vw;
     color: var(--primary);
