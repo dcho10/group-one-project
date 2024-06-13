@@ -23,8 +23,11 @@ export default function BuyingCard ({items, loading}) {
     }
 
     const handleNext = () => {
-        index = Math.floor(Math.random()*items.length)
-        setNewItem(items[index])
+        if (items.length > 0) {
+            index = Math.floor(Math.random()*items.length)
+            console.log(index, "index")
+            setNewItem(items[index])
+        }
     }
 
     return (
@@ -34,7 +37,7 @@ export default function BuyingCard ({items, loading}) {
             {/* <img> </img> */}
             {console.log(items, "items")}
             <section className="listing-info">
-                <h2 className="listing-title"> { !loading? newItem.itemName:"" }</h2>
+                <h2 className="listing-title"> { newItem? newItem.itemName:"" }</h2>
                 <h2 className="listing-price"> Price goes here </h2>
             </section>
             <section className="selection-buttons">

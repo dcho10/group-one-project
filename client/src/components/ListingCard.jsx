@@ -11,14 +11,16 @@ export default function ListingCard({user}) {
         {/* VIEW ALL LISTINGS HERE: */}
         {/* Possible state? */}
 
-          <section className="listings">
-            <h2> Your Listings: </h2>
-            <container className="listing-container">
+          {/* <section className="listings"> */}
+            {/* <h2> Your Listings: </h2> */}
+            {/* <container className="listing-container"> */}
               {/* Make h3 dynamic */}
-              <h3> Listing title goes here </h3>
+              {/* {user.items.map(item => {
+                return <h3> {item.itemName} </h3>
+              })} */}
               {/* Make date dynamic here */}
-            </container>
-          </section>
+            {/* </container> */}
+          {/* </section> */}
           
           {/* RUBAL: Find method to display singular listing on the side after a user clicks on one to see */}
           {/* VIEW THE SINGLE LISTING THE USER WANTS TO SEE */}
@@ -27,9 +29,13 @@ export default function ListingCard({user}) {
             <img></img>
             {/* Add img here */}
             <section className="listing-info-content">
-              <h3> Listing title goes here </h3>
-              <p> Comments: Dynamic number goes here </p>
-              <p> Posted: Date goes here</p>
+              {user.items.map(item => {
+                return <>
+              <h3> {item.itemName} </h3>
+              <p> {item.description} </p>
+              <p> {item.price} </p>
+                </>
+              })}
             </section>
           </section>
         </section>
