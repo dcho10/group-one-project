@@ -10,6 +10,7 @@ export default function BuyingCard ({items, loading}) {
 
     const [newItem, setNewItem] = useState(items[index]);
     // newItem = current value stored
+    // setNewItem = stores current value of random index number of array items
 
     const toggleInfo = () => {
         setShowInfo(!showInfo)
@@ -22,10 +23,8 @@ export default function BuyingCard ({items, loading}) {
     }
 
     const handleNext = () => {
-        index++
-        if ( index < items.length ) {
-            setNewItem(items[index])
-        }
+        index = Math.floor(Math.random()*items.length)
+        setNewItem(items[index])
     }
 
     return (
