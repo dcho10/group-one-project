@@ -1,11 +1,11 @@
 import "./ListingCard.css"
 
-export default function ListingCard() {
+export default function ListingCard({user}) {
     return (
       <>
       <section>
         {/* Make "User" dynamic */}
-        <h1> Welcome, User! </h1>
+        <h1> Welcome, {user.userName}! </h1>
         <section className="listing-page">
         {/* // RUBAL: Use .map to generate all the dynamic listings at once */}
         {/* VIEW ALL LISTINGS HERE: */}

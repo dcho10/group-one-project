@@ -30,8 +30,14 @@ module.exports = {
 
     return req;
   },
-  signToken: function ({ email, username, _id }) {
-    const payload = { email, username, _id };
+  signToken: function ({ email, userName, _id }) {
+    const payload = { email, userName, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };
+
+// NOTE: client side Auth does the decryption (extract info from token - hidden message), 
+// PASS EVERYTHING ON PAYLOAD SO THAT IT WILL SHOW ON THE CLIENT SIDE
+
+// server auth encrypts payload (user's information inside token)
+// client side extracts the payload so that it can be used on frontend/react side
