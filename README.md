@@ -94,8 +94,22 @@ This led to a lot of experimentation in order to see what our team felt was need
 ## Screenshots
 Here are the screenshots from our Shopping App:
 
-![](/screenshots/)
+![](/screenshots/Shopping_App_Homepage.png)
 
-![](/screenshots/)
+![](/screenshots/Shopping_App_Signup.png)
+
+![](/screenshots/Shopping_App_Login.png)
+
+![](/screenshots/Shopping_App_Buy_Or_Sell_Confirmation.png)
+
+![](/screenshots/Shopping_App_Buy_Listing_Page.png)
+
+![](/screenshots/Shopping_App_Buy_Listing_Page_With_Item_Details.png)
+
+![](/screenshots/Shopping_App_Seller_Info_Page.png)
+
+![](/screenshots/Shopping_App_Sell_Listing_Page.png)
+
+![](/screenshots/Shopping_App_Profile_Info_Page.png)
 
 ## Deployment Link
