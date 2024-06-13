@@ -38,7 +38,7 @@ export default function BuyingCard ({items, loading}) {
             {console.log(items, "items")}
             <section className="listing-info">
                 <h2 className="listing-title"> { newItem? newItem.itemName:"" }</h2>
-                <h2 className="listing-price"> Price goes here </h2>
+                <h2 className="listing-price"> ${ newItem? newItem.price:"" } </h2>
             </section>
             <section className="selection-buttons">
                 <section className="response-buttons">
@@ -54,11 +54,11 @@ export default function BuyingCard ({items, loading}) {
 
             {showInfo && (
                 <section className="info">
-                    <p> Description:  description goes here </p>
-                    <Link to="/profiles2">
-                        <p> Created by: seller name goes here</p>   
-                    </Link>
-                    <p> Date: date goes here </p>
+                    <p> {newItem.description} </p>
+                    <p> Created by: 
+                    <Link to="/profiles2"> {newItem.sellerName}
+                    </Link></p>
+                    <p> ${newItem.price} </p>
                 </section>
             )}
         </section>

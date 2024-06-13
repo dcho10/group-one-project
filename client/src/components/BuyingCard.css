@@ -34,6 +34,10 @@
     padding: 0.5vw;
 }
 
+.info a {
+    background-color: var(--white);
+}
+
 .listing-info {
     background-color: var(--white);
     display: flex;

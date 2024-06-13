@@ -1,5 +1,6 @@
 import "./ProfileSidebar.css"
 import ProfileIcon from "../assets/profile-icon.png";
+import Auth from "../utils/auth";
 
 export default function ProfileSidebar () {
      return (
