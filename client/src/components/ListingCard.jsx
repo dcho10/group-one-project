@@ -32,8 +32,8 @@ export default function ListingCard({user}) {
               {user.items.map(item => {
                 return <>
               <h3> {item.itemName} </h3>
-              <p> {item.description} </p>
-              <p> {item.price} </p>
+              <p> Description: {item.description} </p>
+              <p> Price: ${item.price} </p>
                 </>
               })}
             </section>
