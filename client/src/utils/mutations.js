@@ -54,3 +54,43 @@ export const ADD_REVIEW = gql`
     }
   }
 `;
+
+export const REMOVE_ITEM = gql`
+  mutation removeItem($userId: ID!, $itemId: ID!) {
+    removeItem(userId: $userId, itemId: $itemId) {
+    _id
+    userName
+    email
+    items {
+      _id
+      itemName
+      price
+      description
+      sellerName }
+      reviews {
+        reviewBody
+        reviewerName
+      }
+    }
+  }
+`;
+
+export const REMOVE_REVIEW = gql`
+mutation removeReview($userId: ID!, $reviewId: ID!) {
+  removeReview(userId: $userId, reviewId: $reviewId) {
+  _id
+  userName
+  email
+  items {
+    _id
+    itemName
+    price
+    description
+    sellerName }
+    reviews {
+      reviewBody
+      reviewerName
+    }
+  }
+}
+`;

@@ -20,6 +20,34 @@
     opacity: 0;
 }
 
+.single-listing {
+    display: grid;
+    justify-content: center;
+}
+
+.delete-edit {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+}
+
+.delete-edit button {
+    width: 40%;
+    height: 5vh;
+    border: solid 5px var(--primary);
+    background-color: var(--tertiary);
+    font-size: 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--white);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.delete-edit button:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 2px 1px 2px var(--primary);
+    cursor: pointer;
+}
 
 .listing-header, .listing-description, .add-price {
     display: grid;
