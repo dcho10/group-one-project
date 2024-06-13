@@ -23,26 +23,28 @@ export default function BuyingCard ({items, loading}) {
     }
 
     const handleNext = () => {
-        if (items.length > 0) {
-            index = Math.floor(Math.random()*items.length)
-            setNewItem(items[index])
-        }
+        index = Math.floor(Math.random()*items.length)
+        setNewItem(items[index])
     }
 
     return (
         <>
-            <section className="buying-container">
-                {console.log(items, "items")}
-                <section className="listing-info">
-                    <h2 className="listing-title"> { newItem? newItem.itemName:"" } </h2>
-                    <h2 className="listing-price"> ${ newItem? newItem.price:"" } </h2>
+        <section className="buying-container">
+            {/* Image goes here */}
+            {/* <img> </img> */}
+            {console.log(items, "items")}
+            <section className="listing-info">
+                <h2 className="listing-title"> { !loading? newItem.itemName:"" }</h2>
+                <h2 className="listing-price"> Price goes here </h2>
+            </section>
+            <section className="selection-buttons">
+                <section className="response-buttons">
+                    {/* Like and pass button should share same functionality of moving to the next item once clicked */}
+                    {/* Possible state? */}
+                    <button className="like"> ✔️ </button>
+                    <button className="pass" onClick={handleNext}> ❌ </button>
+                    <button className="message" onClick={displayMessage}> 💬 </button>            
                 </section>
-                <section className="selection-buttons">
-                    <section className="response-buttons">
-                        <button className="like"> ✔️ </button>
-                        <button className="pass" onClick={handleNext}> ❌ </button>
-                        <button className="message" onClick={displayMessage}> 💬 </button>            
-                    </section>
 
                     <button className="info-btn" onClick={toggleInfo}> ℹ️ </button>
                 </section>

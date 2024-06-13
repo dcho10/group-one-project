@@ -35,7 +35,7 @@ const resolvers = {
           if (!correctPw) {
             throw AuthenticationError;
           }
-    
+          console.log(user)
           const token = signToken(user);
     
           return { token, user };
