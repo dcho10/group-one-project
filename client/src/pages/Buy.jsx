@@ -13,7 +13,10 @@ export default function Buy() {
     if (!loading) {
         users.map(user => {
             return user.items.map(item => {
-                items.push(item)
+                if (items.includes(item.itemName) === false) {
+                    items.push(item)
+                }
+
             })
         })
     }
