@@ -33,11 +33,10 @@ export default function Header() {
       <section className="links">
         {isLoggedIn ? (
               <section className="loggedIn-btn">
-                <Link to="/profiles/me" >
-                  <button className="profile" > 👤 </button>
+                <Link to="/profiles/me">
+                  <button className="profile">👤</button>
                 </Link>
 
-                {/* Logout needs to redirect to homepage */}
                 <button onClick={logout} className="logout">
                   ➡️
                 </button>
