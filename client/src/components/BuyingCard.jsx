@@ -3,9 +3,13 @@ import { useState } from "react"
 
 import Message from "./Message";
 import "./BuyingCard.css"
+let index = 0;
 
-export default function BuyingCard () {
+export default function BuyingCard ({items, loading}) {
     const [showInfo, setShowInfo] = useState(false);
+
+    const [newItem, setNewItem] = useState(items[index]);
+    // newItem = current value stored
 
     const toggleInfo = () => {
         setShowInfo(!showInfo)
@@ -17,13 +21,21 @@ export default function BuyingCard () {
         setShowMessage(!showMessage)
     }
 
+    const handleNext = () => {
+        index++
+        if ( index < items.length ) {
+            setNewItem(items[index])
+        }
+    }
+
     return (
         <>
         <section className="buying-container">
             {/* Image goes here */}
             {/* <img> </img> */}
+            {console.log(items, "items")}
             <section className="listing-info">
-                <h2 className="listing-title"> Listing Title goes here</h2>
+                <h2 className="listing-title"> { !loading? newItem.itemName:"" }</h2>
                 <h2 className="listing-price"> Price goes here </h2>
             </section>
             <section className="selection-buttons">
@@ -31,7 +43,7 @@ export default function BuyingCard () {
                     {/* Like and pass button should share same functionality of moving to the next item once clicked */}
                     {/* Possible state? */}
                     <button className="like"> ✔️ </button>
-                    <button className="pass"> ❌ </button>
+                    <button className="pass" onClick={handleNext}> ❌ </button>
                     <button className="message" onClick={displayMessage}> 💬 </button>            
                 </section>
 

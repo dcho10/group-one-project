@@ -17,6 +17,7 @@ export default function Home() {
 
     <section className="home-content fadeIn">
       <h1> Welcome! </h1>
+      <p> Why swipe on people when you can swipe on items!</p>
       <p><a href="/login"> Login </a> or <a href="/signup"> signup</a> to get started!</p>
     </section>
     </>
