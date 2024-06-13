@@ -49,7 +49,7 @@ const Login = (props) => {
   return (
     <main>
       <section className="login-container">
-        <section className="login-content">
+        <section className="login-content slideDown">
           <h4>Login</h4>
           <section>
             <form onSubmit={handleFormSubmit} className="login-form">

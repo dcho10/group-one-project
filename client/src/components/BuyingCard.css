@@ -5,29 +5,33 @@
     justify-content: center;
     align-items: center;
     background-color: var(--white);
-    margin: 5rem;
-    padding: 2rem;
+    margin: 5vh;
+    padding: 2vw;
     font-family: "Open Sans", sans-serif;
     scroll-snap-align: start;
 }
 
 .info {
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: 2vh 0;
+    padding: 2vw;
     background-color: var(--white);
     border: solid var(--secondary);
     border-radius: 10px;
+    animation: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    opacity: 0;
 }
 
 .info h2 {
     background-color: var(--white);
     text-align: center;
-    margin: 0.5rem;
+    margin: 1vh;
 }
 
 .info p {
     background-color: var(--white);
-    padding: 0.2rem;
+    padding: 0.5vw;
 }
 
 .listing-info {
@@ -39,19 +43,19 @@
 .listing-title, .listing-price {
     text-align: center;
     background-color: var(--white);
-    margin: 1rem 0 1rem 0;
+    margin: 2vh 0;
 }
 
 .selection-buttons {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
-    gap: 20rem;
+    gap: 20vw;
 }
 
 .response-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 2vw;
     background-color: var(--white);
 }
 
@@ -60,11 +64,11 @@
 }
 
 .like, .pass, .message, .info-btn {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 40px;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
     border: solid;
-    font-size: 25px;
+    font-size: 2.5vw;
     background-color: var(--primary);
 }
 

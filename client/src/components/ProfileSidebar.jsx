@@ -7,8 +7,8 @@ export default function ProfileSidebar () {
         <section className="profile-sidebar">
             <section className="profile-info">
                 <img src={ProfileIcon}/>
-                <h2> {user.userName} </h2>
-                <p> {user.email} </p>
+                <h2> Username goes here </h2>
+                <p> Email: email goes here </p>
             </section>
         </section>
         </>

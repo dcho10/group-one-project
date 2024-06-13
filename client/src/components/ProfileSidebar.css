@@ -1,11 +1,11 @@
 .profile-container {
     display: flex;
     width: 100%;
+    font-family: "Open Sans", sans-serif;
 }
 
 .profile-sidebar {
     width: 35%;
-    font-family: "Open Sans", sans-serif;
 }
 
 .profile-info {
@@ -16,19 +16,18 @@
     text-align: center;
     border: solid 5px;
     border-radius: 20px;
-    margin: 2rem;
-    padding: 1rem;
+    margin: 2vw;
+    padding: 1vw;
     background-color: var(--primary);
 }
 
 .profile-info h2, .profile-info p {
+    margin: 0.25vw 0;
     background-color: var(--primary);
-    margin: 0.25rem 0;
 }
 
 .profile-info img {
     max-width: 50%;
-    margin: 1rem;
+    margin: 1vw;
     background-color: var(--primary);
-
 }

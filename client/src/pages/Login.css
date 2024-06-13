@@ -1,43 +1,47 @@
 .login-container {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 2vw;
     font-family: "Open Sans", sans-serif;
-    
+    overflow-y: hidden;
 }
 
 .login-content {
     border: solid 5px;
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1vw;
     background-color: var(--white);
+    animation: slideDown;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+    opacity: 0;
 }
 
 h4 {
-    font-size: 52px;
+    font-size: 5vw;
     text-align: center;
     background-color: var(--white);
-    
 }
 
 h5 {
-    font-size: 32px;
+    font-size: 3vw;
     background-color: var(--white);
 }
 
 .login-form {
     display: grid;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 1vw;
+    padding: 2vw;
     background-color: var(--white);
 }
 
 .form-input {
-    height: 2.5rem;
-    width: 25rem;
+    height: 6vh;
+    width: 80vw; 
+    max-width: 25em;
     border: solid 5px var(--secondary);
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 2.2vw;
     background-color: var(--white);
 }
 
@@ -49,22 +53,27 @@ h5 {
     display: flex;
     justify-content: space-between;
     background-color: var(--white);
+    padding: 2vw;
+    box-sizing: border-box;
 }
 
 .buttons a, .signup-login, .signup-login a {
     background-color: var(--white);
+    text-decoration: none;
 }
 
 .login-btn, .signup-btn {
-    margin: 1rem 0;
-    width: 10rem;
-    height: 3rem;
-    font-size: 18px;
+    margin: 2vh 0; 
+    width: 40vw;
+    max-width: 10em;
+    height: 8vh;
+    font-size: 1.8vw;
     font-weight: bold;
     color: var(--white);
     border: solid 5px var(--secondary);
     border-radius: 20px;
     background-color: var(--tertiary);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .login-btn:hover, .signup-btn:hover {

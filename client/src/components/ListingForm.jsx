@@ -25,7 +25,7 @@ export default function ListingForm() {
 
     return (
         <>
-        <section>
+        <section className="sell-container">
             <h1> Create Your Listing </h1>
             <form className="listing-form">
                 <section className="listing-header">

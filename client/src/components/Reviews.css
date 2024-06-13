@@ -11,62 +11,60 @@
 }
 
 .review-info h2 {
+    font-size: 3vw;
+    padding: 0.25vw;
     background-color: var(--primary);
-    font-size: 28px;
-    padding: 0.25rem;
 }
 
 .review-date {
+    margin: 0.25vw;
     background-color: var(--primary);
-    margin: 0.25rem;
 }
 
 .review-text {
     border: solid;
     border-top: none;
     background-color: var(--white);
-    padding: 0.25rem;
+    padding: 0.25vw;
 }
 
 .user-reviews {
     display: grid;
     background-color: var(--primary);
-    margin: 2rem;
+    margin: 2vw;
 }
-
 
 .add-review {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 2vw;
 }
 
 .add-review-btn, .submit-review-btn {
-    margin: 0.5rem 0 1rem 0;
-    width: 10rem;
-    height: 3rem;
-    font-size: 18px;
+    margin: 0.5vw 0 1vw 0; 
+    width: 15vw;
+    height: 12vh;
+    font-size: 1.8vw;
     font-weight: bold;
     color: var(--white);
-    border: solid 5px var(--primary);
-    border-radius: 20px;
+    border: solid 0.5vw var(--primary);
+    border-radius: 2vw; 
     background-color: var(--tertiary);
 }
 
 .add-review-btn:hover, .submit-review-btn:hover {
     transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 1px 2px 1px 2px lightgrey;
+    box-shadow: 0.125vw 0.25vw 0.125vw 0.25vw lightgrey;
 }
 
-
 .review-form {
-    border: solid 5px;
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 0.5rem;
+    border: solid 0.5vw;
+    border-radius: 2vw;
+    margin: 2vw;
+    padding: 0.5vw;
     display: grid;
     justify-content: center;
     background-color: var(--primary);
@@ -83,26 +81,25 @@
 
 .review-title input {
     font-family: "Open Sans", sans-serif;
-    font-size: 24px;
-    width: 30rem;
-    height: 2.5rem;
+    font-size: 1.5vw;
+    width: 30vw;
+    height: 6vh;
     background-color: var(--white);
     border: solid;
-    border-radius: 10px;
-    margin: 0.25rem 0;
-    padding: 0.25rem;
+    border-radius: 1vw;
+    margin: 0.25vw 0;
+    padding: 0.25vw;
 }
 
 .review-description textarea {
     font-family: "Open Sans", sans-serif;
-    font-size: 24px;
-    height: 20rem;
-    width: 30rem;
+    font-size: 1.5vw;
+    height: 25vh;
+    width: 30vw;
     border: solid;
-    border-radius: 10px;
+    border-radius: 1vw;
     background-color: var(--white);
     resize: none;
-    margin: 0.25rem 0;
-    padding: 0.25rem;
+    margin: 0.25vw 0;
+    padding: 0.25vw;
 }
-
