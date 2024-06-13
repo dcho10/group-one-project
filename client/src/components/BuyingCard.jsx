@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import Message from "./Message";
 import "./BuyingCard.css"
@@ -7,7 +7,6 @@ let index = 0;
 
 export default function BuyingCard ({items, loading}) {
     const [showInfo, setShowInfo] = useState(false);
-    const [showMessage, setShowMessage] = useState(false);
 
     const [newItem, setNewItem] = useState(items[index]);
     // newItem = current value stored
@@ -17,14 +16,18 @@ export default function BuyingCard ({items, loading}) {
         setShowInfo(!showInfo)
     }
 
+    const [showMessage, setShowMessage] = useState(false);
 
     const displayMessage = () => {
         setShowMessage(!showMessage)
     }
 
     const handleNext = () => {
-        index = Math.floor(Math.random()*items.length)
-        setNewItem(items[index])
+        if (items.length > 0) {
+            index = Math.floor(Math.random()*items.length)
+            console.log(index, "index")
+            setNewItem(items[index])
+        }
     }
 
     return (
@@ -34,7 +37,7 @@ export default function BuyingCard ({items, loading}) {
             {/* <img> </img> */}
             {console.log(items, "items")}
             <section className="listing-info">
-                <h2 className="listing-title"> { !loading? newItem.itemName:"" }</h2>
+                <h2 className="listing-title"> { newItem? newItem.itemName:"" }</h2>
                 <h2 className="listing-price"> Price goes here </h2>
             </section>
             <section className="selection-buttons">
@@ -46,17 +49,16 @@ export default function BuyingCard ({items, loading}) {
                     <button className="message" onClick={displayMessage}> 💬 </button>            
                 </section>
 
-                    <button className="info-btn" onClick={toggleInfo}> ℹ️ </button>
-                </section>
+                <button className="info-btn" onClick={toggleInfo}> ℹ️ </button>
+            </section>
 
             {showInfo && (
                 <section className="info">
-                    <p> Description: {newItem.description} </p>
-                    <p> Created by: 
-                     <Link to="/profiles2">
-                         {newItem.sellerName}   
-                    </Link> </p> 
-                    <p> Price: ${newItem.price} </p>
+                    <p> Description:  description goes here </p>
+                    <Link to="/profiles2">
+                        <p> Created by: seller name goes here</p>   
+                    </Link>
+                    <p> Date: date goes here </p>
                 </section>
             )}
         </section>
