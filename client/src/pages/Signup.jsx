@@ -41,7 +41,7 @@ const Signup = () => {
   return (
     <main>
       <section className="signup-container">
-        <section className="signup-content">
+        <section className="signup-content slideDown">
           <h4>Sign Up</h4>
           <section>
             <form onSubmit={handleFormSubmit} className="signup-card">

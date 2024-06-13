@@ -2,6 +2,10 @@
     display: grid;
     justify-content: center;
     font-family: "Open Sans", sans-serif;
+    animation: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+    opacity: 0;
 }
 
 .home-content h1 {
@@ -12,4 +16,58 @@
 
 p {
     font-size: 18px;
+}
+
+
+/* From: https://www.youtube.com/watch?v=Reu0hHbis5w&t=1121s */
+
+.wrapper {
+    margin-inline: auto;
+    position: relative;
+    height: 500px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+    );
+}
+
+.item {
+    width: 750px;
+    height: 500px;
+    position: absolute;
+    left: max(calc(750px*8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.item1 {
+    animation-delay: calc(15s / 4 * (4 - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc(15s / 4 * (4 - 2) * -1);
+
+}
+
+.item3 {
+    animation-delay: calc(15s / 4 * (4 - 3) * -1);
+
+}
+
+.item4 {
+    animation-delay: calc(15s / 4 * (4 - 4) * -1);
+
+}
+
+@keyframes scrollLeft {
+    to {
+        left: -200px;
+    }
 }

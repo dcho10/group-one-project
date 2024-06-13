@@ -15,6 +15,10 @@
     margin: 5rem;
     padding: 2rem;
     font-family: "Open Sans", sans-serif;
+    animation: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    opacity: 0;
 }
 
 .message-container h2 {

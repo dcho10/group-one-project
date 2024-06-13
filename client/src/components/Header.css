@@ -6,33 +6,33 @@
 }
 
 .home {
-    font-size: 74px;
+    font-size: 5vw;
     font-weight: bold;
     color: var(--primary);
 }
 
 .links {
-    font-size: 24px;
+    font-size: 2vw;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin: 1rem;
+    gap: 1vw;
+    margin: 1vw;
     color: var(--primary);
 }
 
 .loggedIn-btn {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1vw; 
 }
 
 .profile, .logout {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 40px;
+    height: 4vw; 
+    width: 4vw; 
+    border-radius: 4vw;
     border: solid;
-    font-size: 25px;
+    font-size: 2.5vw;
     background-color: var(--primary);
 }
 
