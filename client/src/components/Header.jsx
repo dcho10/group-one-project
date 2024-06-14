@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <>
     <header className="header">
-      <a href="/" className="home"> Shopping </a>
+      <a href="/" className="home"> Vintage Vault </a>
       <section className="links">
         {isLoggedIn ? (
               <section className="loggedIn-btn">
